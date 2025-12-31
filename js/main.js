@@ -65,4 +65,28 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   images.forEach(img => imageObserver.observe(img));
+
+  // Timeline animation for experience items
+  const experienceItems = document.querySelectorAll('.experience-item');
+
+  if (experienceItems.length > 0) {
+    const experienceObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Add staggered delay based on item position
+          const item = entry.target;
+          const delay = Array.from(experienceItems).indexOf(item) * 100;
+          setTimeout(() => {
+            item.classList.add('visible');
+          }, delay);
+          experienceObserver.unobserve(item);
+        }
+      });
+    }, {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    experienceItems.forEach(item => experienceObserver.observe(item));
+  }
 });
