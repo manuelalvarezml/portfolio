@@ -1,5 +1,16 @@
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
+  // Force video autoplay on mobile
+  const heroVideo = document.querySelector('.masthead-video');
+  if (heroVideo) {
+    heroVideo.play().catch(function() {
+      // If autoplay fails, play on first user interaction
+      document.addEventListener('touchstart', function playOnTouch() {
+        heroVideo.play();
+        document.removeEventListener('touchstart', playOnTouch);
+      }, { once: true });
+    });
+  }
   const menuToggle = document.querySelector('.mobile-menu-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
 
