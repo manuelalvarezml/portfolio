@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A voice-first assistant with persistent memory and approved actions — Active local prototype. Work by Manuel Alvarez.">
+  <link rel="canonical" href="https://manuelalvarez.cc/project-nash-life-manager">
+  <title>Nash Life Manager — Manuel Alvarez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Manuel Alvarez</a>
+      <nav class="main-nav">
+        <a href="index.html" class="active">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobile-nav">
+    <nav>
+      <a href="index.html" class="active">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Project Detail -->
+  <main class="project-detail" style="margin-top: var(--header-height);">
+
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Back to Work
+    </a>
+
+    <header class="project-detail-header">
+      <p class="category">AI Agents &amp; Personal Software</p><h1>Nash Life Manager</h1>
+      <p class="subtitle">A voice-first assistant with persistent memory and approved actions</p>
+      <div class="project-meta"><span>Active local prototype</span><span>Manuel Alvarez</span></div>
+    </header>
+    <div class="project-detail-content">
+<h2>Overview</h2><p>Nash is a local-first AI assistant I am developing to turn voice and text into structured memories, goals and scheduling workflows. It combines a FastAPI backend, LangGraph agents, SQLite persistence and a React interface.</p>
+<h2>Voice to durable context</h2><p>Local speech transcription feeds diary entries and structured semantic units. The application combines chronological memory with local vector retrieval so that useful context can persist across conversations.</p>
+<h2>Explicit control over agent actions</h2><p>The calendar engine distinguishes direct instructions from suggestions inferred from diaries or goals. Suggestions remain pending until approved, fixed commitments are protected during replanning, and schedule changes have an audit history.</p>
+<h2>System boundaries</h2><p>Storage, audio, transcription and vector retrieval stay local. The default reasoning path uses the OpenAI API with pseudonymization, so this is not an entirely offline system. Ollama remains an optional alternative.</p>
+<h2>Current state</h2><p>This is an active local prototype, not a hosted service. Implemented modules include diary and memory, goal discovery, calendar suggestions and personal tracking. A separate encrypted phone voice inbox has been implemented locally but is not deployed or integrated into the main processing flow.</p><p>The repository contains the committed development snapshot; later local experiments are described separately. No personal recordings or databases are included.</p>
+      <h2>Technologies</h2><div class="tech-list"><span class="tech-tag">Python</span><span class="tech-tag">FastAPI</span><span class="tech-tag">LangGraph</span><span class="tech-tag">SQLite</span><span class="tech-tag">Chroma</span><span class="tech-tag">Speech Recognition</span><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span></div>
+      <div class="project-links"><a class="project-link" href="https://github.com/manuelalvarezml/nash-life-manager" target="_blank" rel="noopener">View repository</a><a class="project-link" href="contact.html">Discuss the prototype</a></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-social">
+
+
+        <a href="mailto:manuelalvarezml.dev@gmail.com">Email</a>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Manuel Alvarez</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

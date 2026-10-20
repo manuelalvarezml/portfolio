@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     menuToggle.addEventListener('click', function() {
       menuToggle.classList.toggle('active');
       mobileNav.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(mobileNav.classList.contains('active')));
       document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
     });
 
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', function() {
         menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
         mobileNav.classList.remove('active');
         document.body.style.overflow = '';
       });

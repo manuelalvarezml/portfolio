@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="From natural-language music discovery to private DJ mixes — Deployed private trial · Mar 2026–Present. Work by Manuel Alvarez.">
+  <link rel="canonical" href="https://manuelalvarez.cc/project-resonant">
+  <title>Resonant — Manuel Alvarez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Manuel Alvarez</a>
+      <nav class="main-nav">
+        <a href="index.html" class="active">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobile-nav">
+    <nav>
+      <a href="index.html" class="active">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Project Detail -->
+  <main class="project-detail" style="margin-top: var(--header-height);">
+
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Back to Work
+    </a>
+
+    <header class="project-detail-header">
+      <p class="category">AI Product &amp; Music Information Retrieval</p><h1>Resonant</h1>
+      <p class="subtitle">From natural-language music discovery to private DJ mixes</p>
+      <div class="project-meta"><span>Deployed private trial · Mar 2026–Present</span><span>Manuel Alvarez</span></div>
+    </header>
+    <div class="project-detail-content">
+<h2>Overview</h2><p>Resonant is the music application I am developing. It connects a natural-language request to an explainable playlist, then to a planned DJ mix with private progressive playback. The current AWS deployment is a bounded private trial, with accounts and persistent playlists and jobs.</p>
+<h2>Retrieval that can be inspected</h2><p>PlaylistIQ translates a request into validated musical intent, retrieves tracks using semantic embeddings and musical features, and applies deterministic ranking. Each track has an explanation, and fixed-query replay checks help preserve behavior as the system changes.</p><p>Acoustic analysis runs locally. The cloud uses exported catalog evidence and a focused text-inference worker for planning and retrieval.</p>
+<h2>From playlist to playback</h2><p>The playlist-to-mix flow creates versioned transition plans and renders progressive AAC/HLS audio with completed M4A output. Owner-scoped durable jobs, idempotent admission, cancellation and fenced completion support reliable processing. Private media delivery isolates each account's results.</p>
+<h2>A smaller rendering service</h2><p>I reduced the compressed renderer container from <strong>310 MB to 73 MB</strong> with a focused FFmpeg build and lazy optional dependencies. The renderer remains separate from model inference, with source and artifact verification and bounded transition behavior.</p>
+<h2>Current state</h2><p>The private trial supports discovery, saved playlists and progressive mixes. General access, personal cloud uploads and cloud acoustic analysis are still in development. A walkthrough is available on request; the live app requires an approved account.</p>
+      <h2>Technologies</h2><div class="tech-list"><span class="tech-tag">Python</span><span class="tech-tag">Node.js</span><span class="tech-tag">Semantic Search</span><span class="tech-tag">MuQ-MuLan</span><span class="tech-tag">FFmpeg</span><span class="tech-tag">Docker</span><span class="tech-tag">AWS Lambda</span><span class="tech-tag">S3 / CloudFront</span><span class="tech-tag">DynamoDB</span><span class="tech-tag">CloudFormation</span></div>
+      <div class="project-links"><a class="project-link" href="https://resonant.lat" target="_blank" rel="noopener">Private trial</a><a class="project-link" href="https://github.com/manuelalvarezml/resonant-ai-dj" target="_blank" rel="noopener">View repository</a><a class="project-link" href="contact.html">Request a walkthrough</a></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-social">
+
+
+        <a href="mailto:manuelalvarezml.dev@gmail.com">Email</a>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Manuel Alvarez</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
