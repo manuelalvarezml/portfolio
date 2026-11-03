@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Promptlist: a deployed Rust/AWS app for conversational Spotify playlists, with OAuth PKCE, durable background jobs and private account storage. Built by Manuel Alvarez.">
+  <link rel="canonical" href="https://manuelalvarez.cc/project-promptlist">
+  <title>Promptlist | Manuel Alvarez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=pearl-preview-7">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Manuel Alvarez</a>
+      <nav class="main-nav">
+        <a href="index.html" class="active">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobile-nav">
+    <nav>
+      <a href="index.html" class="active">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Project Detail -->
+  <main class="project-detail" style="margin-top: var(--header-height);">
+
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Back to Work
+    </a>
+
+    <header class="project-detail-header">
+      <p class="category">Applied AI · Rust Backend · Music Product</p>
+      <h1>Promptlist</h1>
+      <p class="subtitle">Turn what you want to hear into a playlist from your own library</p>
+      <div class="project-meta"><span>Deployed · Invite-only beta</span><span>Independent project · Manuel Alvarez</span></div>
+    </header>
+    <div class="project-detail-content">
+      <h2>The product</h2>
+      <p>Promptlist turns a natural-language request into a selection from your Spotify library. Refine it conversationally, edit the preview, revisit saved history and listen through the integrated player. I built the application in Rust and deployed it on AWS.</p>
+      <h2>AI interpretation, deterministic matching</h2>
+      <p>The model translates a request into structured preferences. Rust applies those preferences across the eligible library, keeping playlist selection separate from model output. Simple requests and refinements can run without a model call. Missing metadata stays explicit rather than being invented.</p>
+      <h2>Reliable integrations and background work</h2>
+      <p>OAuth PKCE connects each Spotify account. Library sync preserves the last successful snapshot while updates run. Rust HTTP and worker Lambdas use DynamoDB and S3 for account-scoped state and durable jobs; conditional leases and fenced writes guard concurrent updates. Playlist export uses explicit confirmation and protections against duplicate or ambiguous writes.</p>
+      <h2>Privacy by design</h2>
+      <p>Only request text and prompt-derived preferences go to the language model, not the Spotify library. Saved libraries and history remain in private account storage. Promptlist does not download or analyze Spotify audio.</p>
+      <h2>Current state</h2>
+      <p>The app is deployed at promptlist.lat as an invite-only beta. Real Spotify login and Premium playback have been verified with the owner account. Playlist export is implemented and covered by synthetic tests; real-provider cloud export acceptance is still pending. A walkthrough is available without requiring beta access.</p>
+      <p>Promptlist focuses on a listener’s existing Spotify collection. <a href="project-resonant.html">Resonant</a> is a separate project for music discovery and DJ mixes.</p>
+      <h2>Technologies</h2>
+      <div class="tech-list"><span class="tech-tag">Rust</span><span class="tech-tag">Axum / Tokio</span><span class="tech-tag">Maud</span><span class="tech-tag">SQLite</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Spotify API / SDK</span><span class="tech-tag">OAuth PKCE</span><span class="tech-tag">OpenAI</span><span class="tech-tag">AWS Lambda</span><span class="tech-tag">DynamoDB / S3</span><span class="tech-tag">CloudFormation</span></div>
+      <div class="project-links"><a class="project-link" href="https://promptlist.lat" target="_blank" rel="noopener">Visit Promptlist (invite-only)</a><a class="project-link" href="https://github.com/manuelalvarezml/promptlist" target="_blank" rel="noopener">View source</a><a class="project-link" href="contact.html">Request a walkthrough</a></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-social">
+
+
+        <a href="mailto:manuelalvarezml.dev@gmail.com">Email</a>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Manuel Alvarez</p>
+    </div>
+  </footer>
+
+  <script src="js/dot-field.js?v=pearl-preview-7"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
